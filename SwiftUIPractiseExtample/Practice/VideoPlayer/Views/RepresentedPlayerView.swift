@@ -32,6 +32,7 @@ final class VideoPlayerView: UIView {
 
   override init(frame: CGRect) {
     super.init(frame: .zero)
+    try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
     self.playerLayer = AVPlayerLayer(player: player)
     layer.addSublayer(playerLayer)
     bind()
